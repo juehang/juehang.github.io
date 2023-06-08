@@ -197,6 +197,11 @@ figure.fullwidth figcaption { margin-right: 24%; }
 a:link,
 a:visited { color: inherit; }
 
+#image-link {
+  text-decoration: none;
+  background: none;
+}
+
 a:link {
   text-decoration: none;
   background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);

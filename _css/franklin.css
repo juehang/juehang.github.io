@@ -247,9 +247,23 @@ td {
 }
 
 .franklin-content .img-small img {
-  width: 50%;
+  width: 50%!important;
   text-align: center;
-  padding-left: 20%;
+  padding-left: 10%;
+}
+
+.franklin-content .img-smaller-square img {
+  width: 20vw;
+  height: 20vw;
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+
+#rounded_image {
+  border-radius: 50%/50%;
 }
 
 /* ==================================================================

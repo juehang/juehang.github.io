@@ -86,3 +86,7 @@
 @media (min-width: 1000px) {
   .franklin-content { width: 660px; }
 }
+
+@media (min-width: 1200px) {
+  .franklin-content { width: 860px; }
+}
