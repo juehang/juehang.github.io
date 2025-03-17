@@ -77,10 +77,17 @@
   #menu {
     margin-top: 100px;
     float: left;
-    width: 100px;
+    width: 150px;
     text-align: right;
   }
   .franklin-content { width: 600px; }
+}
+
+@media (max-width: 940px) {
+  .img-smaller-square {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 
 @media (min-width: 1000px) {

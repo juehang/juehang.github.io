@@ -107,8 +107,8 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 24px; }
-.franklin-content h2 { font-size: 22px; }
+.franklin-content h1 { font-size: 32px; }
+.franklin-content h2 { font-size: 24px; }
 .franklin-content h3 { font-size: 20px; }
 
 .franklin-content h1,
@@ -253,13 +253,13 @@ td {
 }
 
 .franklin-content .img-smaller-square img {
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
   text-align: center;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 3%;
-  padding-top: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  padding-top: 2%;
 }
 
 #rounded_image {

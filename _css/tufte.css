@@ -36,7 +36,7 @@
 }
 
 /* Tufte CSS styles */
-html { font-size: 15px; }
+html { font-size: 13px; }
 
 body {
   width: 87.5%;
@@ -44,15 +44,17 @@ body {
   margin-right: auto;
 
   /* padding-left: 12.5%; */
-  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  background-color: #fffff8;
+  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
   color: #111;
   max-width: 1400px;
   counter-reset: sidenote-counter;
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 800;
+  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   font-size: 3.2rem;
@@ -61,7 +63,8 @@ h1 {
 
 h2 {
   font-style: italic;
-  font-weight: 400;
+  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
+  font-weight: 600;
   margin-top: 2.1rem;
   margin-bottom: 1.4rem;
   font-size: 2.2rem;
@@ -69,7 +72,8 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  /* font-style: italic; */
+  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
   font-weight: 400;
   font-size: 1.7rem;
   margin-top: 2rem;
@@ -277,11 +281,11 @@ table.fullwidth { width: 100%; }
 
 div.table-wrapper {
   overflow-x: auto;
-  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
 }
 
 .sans {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
   letter-spacing: 0.03em;
 }
 

@@ -14,7 +14,10 @@ This file maintains important information about the project structure, key techn
 
 - Navigation: Links to pages are manually added to the sidebar in `_layout/nav.html`
 - The site follows a clean, academic-focused design
+- Font: Changed from ET Book to Source Sans 3 (Light weight) with Roboto and Arial fallbacks
+- Updated `.sans` class and table-wrapper to use Source Sans 3 as default sans-serif font
 
 ## Changes Log
 
 - 2025-03-13: Added Research page to the sidebar navigation
+- 2025-03-17: Updated body font to Source Sans 3
