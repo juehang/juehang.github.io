@@ -1,5 +1,5 @@
 @def title = "Qin Juehang"
-@def tags = ["syntax", "code"]
+@def tags = ["bio", "homepage"]
 
 # Bio
 ~~~
