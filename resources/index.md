@@ -14,6 +14,8 @@ Here I list some useful things that I have made over the years, such as visualis
 
 ### University-level materials
 
+#### Introduction to Bayesian statistics for Particle Physics
+ - [Lecture notes](intro_bayes_lecture), setting up some basic notation and ideas for the following notebooks.
  - [Annotated Colab notebook](https://colab.research.google.com/drive/1dBqK96Pk0PY9Usy_YmdfybuMyEF-pbDp?usp=sharing) demonstrating how to conduct a simple peak search in toy particle physics data using HMC/NUTS.
  - [Annotated Colab notebook](https://colab.research.google.com/drive/12T2bfFWZ6k2OzBTAq5kyanVQF19wCYia?usp=sharing) demonstrating how to conduct a simple peak search in toy particle physics data with variational inference, referencing the earlier HMC/NUTS notebook. This notebook includes an activity at the end for students to try out, and was originally designed as a classroom activity for a Bayesian statistics lecture.
 
