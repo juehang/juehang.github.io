@@ -35,8 +35,42 @@
   font-style: normal;
 }
 
+/* Playfair Display - Variable font for headers */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../assets/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../assets/fonts/playfair-display/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Inter - Variable font for body text */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Tufte CSS styles */
-html { font-size: 13px; }
+html { font-size: 11px; }
 
 body {
   width: 87.5%;
@@ -44,7 +78,7 @@ body {
   margin-right: auto;
 
   /* padding-left: 12.5%; */
-  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
+  font-family: "Inter", "Source Sans 3", Roboto, Arial, sans-serif;
   font-weight: 400;
   background-color: #0f172a;
   color: #e2e8f0;
@@ -53,31 +87,31 @@ body {
 }
 
 h1 {
-  font-weight: 800;
-  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-family: "Playfair Display", "Source Serif 4", 'Times New Roman', Times, serif;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
-  font-size: 3.2rem;
+  font-size: 4.2rem;
   line-height: 1;
   color: #f8fafc;
 }
 
 h2 {
-  font-style: italic;
-  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
+  /* font-style: italic; */
+  font-family: "Playfair Display", "Source Serif 4", 'Times New Roman', Times, serif;
   font-weight: 600;
   margin-top: 2.1rem;
   margin-bottom: 1.4rem;
-  font-size: 2.2rem;
+  font-size: 3.0rem;
   line-height: 1;
   color: #f1f5f9;
 }
 
 h3 {
   /* font-style: italic; */
-  font-family: "Source Serif 4", 'Times New Roman', Times, serif;
-  font-weight: 400;
-  font-size: 1.7rem;
+  font-family: "Playfair Display", "Source Serif 4", 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-size: 2.0rem;
   margin-top: 2rem;
   margin-bottom: 1.4rem;
   line-height: 1;
@@ -280,11 +314,11 @@ table.fullwidth { width: 100%; }
 
 div.table-wrapper {
   overflow-x: auto;
-  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
+  font-family: "Inter", "Source Sans 3", Roboto, Arial, sans-serif;
 }
 
 .sans {
-  font-family: "Source Sans 3", Roboto, Arial, sans-serif;
+  font-family: "Inter", "Source Sans 3", Roboto, Arial, sans-serif;
   letter-spacing: 0.03em;
 }
 

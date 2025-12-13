@@ -75,9 +75,9 @@
 
 @media (min-width: 940px) {
   #menu {
-    margin-top: 50px;
+    margin-top: 10px;
     float: left;
-    width: 150px;
+    width: 200px;
     text-align: right;
   }
   .franklin-content { width: 600px; }
@@ -96,4 +96,13 @@
 
 @media (min-width: 1200px) {
   .franklin-content { width: 860px; }
+}
+
+/* Dark theme image utilities */
+.dark-invert-hue {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.dark-screen {
+  mix-blend-mode: screen;
 }
