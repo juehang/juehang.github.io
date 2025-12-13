@@ -99,10 +99,12 @@
 }
 
 /* Dark theme image utilities */
-.dark-invert-hue {
-  filter: invert(1) hue-rotate(180deg);
+.dark-invert{
+  filter: invert(1);
+  mix-blend-mode: screen
 }
 
-.dark-screen {
-  mix-blend-mode: screen;
+.dark-invert-hue {
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: screen
 }
