@@ -87,10 +87,10 @@ h3 {
 hr {
   display: block;
   height: 1px;
-  width: 55%;
+  width: 100%;
   border: 0;
-  border-top: 1px solid #334155;
-  margin: 1em 0;
+  background: linear-gradient(to right, transparent, #475569 20%, #475569 80%, transparent);
+  margin: 2.5em 0;
   padding: 0;
 }
 
