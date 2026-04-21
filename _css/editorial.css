@@ -502,7 +502,6 @@ footer.ed-footer .social a {
 footer.ed-footer .social a:hover { opacity: 1; border: none; }
 footer.ed-footer .social img {
   width: 18px; height: 18px;
-  filter: invert(0.85);
 }
 
 /* --- Dark theme image utilities (kept from old) --------- */
