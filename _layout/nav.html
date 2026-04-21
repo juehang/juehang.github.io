@@ -1,20 +1,66 @@
-<div id="layout">
-  <div id="navicons" style="display: table;">
-    <div style="display: table-row;">
-      <div style="display: table-cell; width: 29px"><a id="image-link" href="https://orcid.org/0000-0001-8228-8949"><img src="/assets/orcid.svg" alt="ORCID logo" width="24" height="24"></a></div>
-      <div style="display: table-cell; width: 29px"><a id="image-link" href="https://fediscience.org/@qinjuehang" rel="me"><img src="/assets/mastodon.svg" alt="Mastodon logo" width="24" height="24"></a></div>
-      <div style="display: table-cell; width: 29px"><a id="image-link" href="https://github.com/juehang/" rel="me"><img src="/assets/github.svg" alt="Github logo" width="24" height="24"></a></div>
+<header class="ed-nav">
+  <a class="brand" href="/">
+    <div class="brand-block">
+      <span>Qin Juehang</span>
+      <span class="mono">Experimental physicist · Rice</span>
+    </div>
+  </a>
+  <ul>
+    <li><a href="/" {{ispage index.html}}class="current"{{end}}>About</a></li>
+    <li><a href="/research/" {{ispage research/index.html research/*}}class="current"{{end}}>Research Blog</a></li>
+    <li><a href="/resources/" {{ispage resources/index.html resources/*}}class="current"{{end}}>Resources</a></li>
+    <li><a href="https://orcid.org/0000-0001-8228-8949">Publications &#8599;</a></li>
+  </ul>
+</header>
+
+{{ispage index.html}}
+<section class="ed-hero">
+  <div class="hero-image">
+    <div class="hero-tag"><span class="bar"></span>01 · About</div>
+    <div class="hero-portrait-wrap">
+      <div class="portrait">
+        <img src="/assets/me.jpg" alt="Qin Juehang">
+      </div>
+    </div>
+    <div class="hero-coords">
+      29.7174° N · 95.4018° W<br>
+      Rice University
     </div>
   </div>
-  <div id="menu">
-    <ul>
-      <li><div class="img-smaller-square">
-        <img align="right" src="/assets/me.jpg" alt="My Image" id="rounded_image">
-      </div></li>
-      <li><h2><div>&nbsp;</div>Qin Juehang</h2></li>
-      <li><h3><a href="/">Home</a></h3></li>
-      <li><h3><a href="/research/">Research Blog</a></h3></li>
-      <li><h3><a href="/resources/">Resources</a></h3></li>
-    </ul>
+  <div class="hero-text">
+    <h1>Notes from the Dark Sector</h1>
+    <p class="ed-deck">Searching for new physics via neutrinos and dark matter</p>
+    <div class="ed-meta">
+      <span>Postdoc · <strong>Rice</strong></span>
+      <span>PhD · <strong>Purdue</strong></span>
+    </div>
   </div>
-  <div id="main">
+</section>
+
+<div class="shell">
+  <aside class="left-meta">
+    <div class="meta-block">
+      <div class="k">Role</div>
+      <div class="v">Postdoctoral<br>Researcher</div>
+    </div>
+    <div class="meta-block">
+      <div class="k">Institution</div>
+      <div class="v">Rice University</div>
+    </div>
+    <div class="meta-block">
+      <div class="k">Field</div>
+      <div class="v">Astroparticle<br><em>physics</em></div>
+    </div>
+    <div class="meta-block">
+      <div class="k">Updated</div>
+      <div class="v mono-date">{{ fd_mtime_iso }}</div>
+    </div>
+  </aside>
+  <main>
+    <div class="prose">
+{{end}}
+
+{{isnotpage index.html}}
+<div class="shell shell--simple">
+  <main>
+{{end}}

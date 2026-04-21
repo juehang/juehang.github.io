@@ -21,7 +21,7 @@ Alpha decays are easy to select because they are monoenergetic and also produce 
 
 Finally, a point cloud can be propagated from every background event in an analysis ROI. This point cloud can be propagated forwards or backwards in time to search for $^{214}$Bi and $^{218}$Po events respectively, as they are the decays following and preceding a $^{214}$Pb decay in the decay chain. While $^{214}$Bi is also a beta decay with a spectrum extending down to low energies, it is easy to tag because the extremely short half life of the decay daughter, $^{214}$Po, means that every $^{214}$Bi decay is almost immediately followed up by a $^{214}$Po decay. If the point cloud encounters a $^{218}$Po or $^{214}$Bi event, the background event can be tagged as $^{214}$Pb. An illustration of such a point cloud is shown below in Fig 1.
 
-@@dark-invert
+@@dark-invert-hue
 ![Plot of point cloud propagated along velocity field.](point_cloud_tight_scatter.png)
 @@
 
@@ -41,7 +41,7 @@ As part of my PhD, I worked on analysis methods for uncovering a track formed by
 
 I am also working on the estimation the look-elsewhere effect correction for such a computationally difficult problem. The look-elsewhere effect refers to the fact that the more independent experiments one does, the more often one would expect to get a statistically "surprising" result by chance. While it is easy to correct for this when one is doing multiple independent experiments, searching for a track that can come from any direction over a long period of time also results in many experiments that are effectively independent! For example, for tracks that are a few microseconds long, one would expect tracks from today and data from tomorrow to be essentially truly independent. However, the actual number of effectively independent trials, known as the trial factor, is not always easy to estimate -- while the result from a search of dark matter tracks days apart is obviously completely independent, what about microseconds apart, where the times of the tracks overlap? While this seems like a technical detail, an estimate of the trial factor is necessary to determine whether any signal is a statistical fluctuation, or is actually dark matter. Finally, I am working on a framework to estimate the sensitivity of Windchime accelerometer arrays with different quantum-sensing methods and array sizes. This would allow us to determine the sensitivity of large sensor arrays efficiently, and inform both the design of a first-generation Windchime experiment, and the R&D direction for the longer-term project.
 
-@@dark-invert
+@@dark-invert-hue
 ![2 side-by-side plots showing two 2D slices of significance.](2D_SNR.png)
 @@
 

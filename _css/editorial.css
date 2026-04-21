@@ -1,0 +1,540 @@
+/* ============================================================
+   Qin Juehang — Editorial dark theme
+   Based on Personal Website design handoff
+   ============================================================ */
+
+/* --- Self-hosted variable fonts -------------------------- */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/assets/fonts/source-serif-4/SourceSerif4-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/assets/fonts/source-serif-4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/inter-tight/InterTight-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/inter-tight/InterTight-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- Tokens ---------------------------------------------- */
+:root {
+  --bg: #0b0d14;
+  --bg-raise: #10131c;
+
+  --ink: #e8e4d9;
+  --ink-dim: #a8a597;
+  --ink-faint: #6a6a65;
+
+  --rule: rgba(232, 228, 217, 0.10);
+  --rule-strong: rgba(232, 228, 217, 0.22);
+
+  --accent-hue: 250;
+  --accent: oklch(0.78 0.08 var(--accent-hue));
+  --accent-dim: oklch(0.62 0.06 var(--accent-hue));
+
+  --link: oklch(0.78 0.09 220);
+  --link-hover: oklch(0.88 0.10 220);
+
+  --body-size: 18px;
+  --serif-display: "Fraunces", ui-serif, Georgia, serif;
+  --serif-body: "Source Serif 4", ui-serif, Georgia, serif;
+  --sans-ui: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif-body);
+  font-size: var(--body-size);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Atmospheric background glow */
+.starfield {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, oklch(0.3 0.06 var(--accent-hue) / 0.14), transparent 60%),
+    radial-gradient(900px 500px at -10% 100%, oklch(0.28 0.05 var(--accent-hue) / 0.12), transparent 60%);
+}
+
+/* --- Top nav --------------------------------------------- */
+.ed-nav {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 56px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans-ui);
+}
+.ed-nav .brand {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--serif-display);
+  font-size: 20px; color: var(--ink); font-weight: 400;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.ed-nav .brand:hover { color: var(--ink); }
+.ed-nav .brand-block { display: flex; flex-direction: column; line-height: 1.1; }
+.ed-nav .brand-block .mono {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--ink-faint); letter-spacing: 0.15em;
+  text-transform: uppercase; margin-top: 4px;
+}
+.ed-nav ul {
+  list-style: none; display: flex; gap: 28px;
+  margin: 0; padding: 0;
+}
+.ed-nav ul a {
+  font-family: var(--sans-ui);
+  font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim); text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.ed-nav ul a:hover { color: var(--ink); }
+.ed-nav ul a.current { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+/* --- Franklin content wrapper (transparent) ------------- */
+/* Override default Franklin layout so per-section wrappers can size themselves */
+.franklin-content { position: relative; z-index: 1; }
+
+/* --- Split hero ------------------------------------------ */
+.ed-hero {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 5fr 7fr;
+  min-height: 520px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ed-hero .hero-image {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(10,12,18,0.35) 0%, rgba(7,9,15,0.75) 100%),
+    url('/assets/starfield-hero.jpg') center center / cover no-repeat;
+  border-right: 1px solid var(--rule);
+  overflow: hidden;
+}
+.ed-hero .hero-image::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(1px 1px at 42% 30%, rgba(220,210,250,0.4), transparent 60%),
+    radial-gradient(2px 2px at 75% 55%, rgba(220,210,250,0.5), transparent 60%);
+  opacity: 0.6;
+}
+
+.ed-hero .hero-tag {
+  position: absolute;
+  top: 32px; left: 40px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  z-index: 2;
+  display: flex; gap: 12px; align-items: center;
+}
+.ed-hero .hero-tag .bar { width: 18px; height: 1px; background: var(--accent-dim); }
+
+.ed-hero .hero-portrait-wrap {
+  position: absolute;
+  bottom: 40px; left: 40px;
+  width: 130px; height: 130px;
+  z-index: 2;
+}
+.ed-hero .hero-portrait-wrap .portrait { width: 100%; height: 100%; }
+
+.ed-hero .hero-coords {
+  position: absolute;
+  bottom: 32px; right: 32px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--ink-faint);
+  text-align: right;
+  line-height: 1.8;
+  z-index: 2;
+}
+
+.ed-hero .hero-text {
+  padding: 72px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+  min-width: 0;
+}
+.ed-hero h1 {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 24px;
+  font-variation-settings: "opsz" 144;
+  text-wrap: balance;
+}
+.ed-hero h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+
+.ed-hero .ed-deck {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+  font-weight: 300;
+  max-width: 420px;
+  margin: 0;
+}
+.ed-hero .ed-meta {
+  margin-top: 32px;
+  display: flex; gap: 24px;
+  font-family: var(--sans-ui);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.ed-hero .ed-meta strong { color: var(--ink); font-weight: 500; }
+
+/* --- Portrait (circular avatar) -------------------------- */
+.portrait {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #3a4a5c 0%, #1a2030 45%, #0d1018 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--rule-strong), 0 20px 60px -20px rgba(0,0,0,0.6);
+}
+.portrait img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* --- Body shell: left meta + prose ----------------------- */
+.shell {
+  position: relative; z-index: 1;
+  max-width: 1080px; margin: 0 auto;
+  padding: 80px 56px 120px;
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 72px;
+}
+.shell--simple {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+}
+.shell main { max-width: 720px; min-width: 0; }
+
+.left-meta {
+  position: sticky; top: 100px; align-self: start;
+  font-family: var(--sans-ui); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+  line-height: 1.8;
+}
+.left-meta .meta-block { margin-bottom: 32px; }
+.left-meta .meta-block .k {
+  color: var(--ink-faint); margin-bottom: 6px; font-size: 10px;
+}
+.left-meta .meta-block .v {
+  color: var(--ink);
+  font-family: var(--serif-display);
+  font-size: 17px; text-transform: none;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+  font-weight: 400;
+}
+.left-meta .meta-block .v em {
+  font-style: italic; font-weight: 300; color: var(--accent);
+}
+.left-meta .mono-date {
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* --- Prose (about page hero block) ----------------------- */
+.prose p {
+  margin: 0 0 24px;
+  font-size: var(--body-size);
+  line-height: 1.72;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.prose p:first-of-type::first-letter {
+  font-family: var(--serif-display);
+  font-weight: 300;
+  font-size: 68px;
+  line-height: 0.85;
+  float: left;
+  padding: 6px 14px 0 0;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144;
+}
+.prose a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid oklch(0.78 0.09 220 / 0.35);
+  transition: color 0.15s, border-color 0.15s;
+}
+.prose a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+
+/* --- Generic page (research/resources/posts) ------------ */
+/* Apply prose-like styling to plain markdown content inside .shell main */
+.shell main h1,
+.shell main h2,
+.shell main h3,
+.shell main h4 {
+  font-family: var(--serif-display);
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.shell main h1 {
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1.05;
+  margin: 0 0 32px;
+  font-variation-settings: "opsz" 144;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.shell main h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin: 56px 0 16px;
+  font-variation-settings: "opsz" 72;
+}
+.shell main h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 40px 0 12px;
+  font-variation-settings: "opsz" 36;
+  color: var(--ink-dim);
+}
+.shell main h4 {
+  font-size: 17px;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+  color: var(--ink-dim);
+  font-style: italic;
+  font-weight: 400;
+}
+.shell main p {
+  margin: 0 0 24px;
+  font-size: var(--body-size);
+  line-height: 1.72;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.shell main a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid oklch(0.78 0.09 220 / 0.35);
+  transition: color 0.15s, border-color 0.15s;
+}
+.shell main a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+.shell main h1 a, .shell main h2 a, .shell main h3 a, .shell main h4 a {
+  color: inherit; border-bottom: none;
+}
+.shell main h1 a:hover, .shell main h2 a:hover, .shell main h3 a:hover, .shell main h4 a:hover {
+  color: var(--accent); border-bottom: none;
+}
+.shell main ul, .shell main ol {
+  margin: 0 0 24px; padding-left: 1.4em;
+  line-height: 1.72;
+}
+.shell main li { margin: 6px 0; }
+.shell main li p { margin: 6px 0; }
+
+.shell main blockquote {
+  border-left: 3px solid var(--accent-dim);
+  margin: 24px 0;
+  padding: 4px 20px;
+  color: var(--ink-dim);
+  font-style: italic;
+}
+.shell main blockquote p { margin: 0 0 12px; }
+.shell main blockquote p:last-child { margin: 0; }
+
+.shell main hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+
+.shell main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border-radius: 2px;
+}
+
+.shell main figure { margin: 32px 0; }
+.shell main figcaption {
+  font-family: var(--sans-ui);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Inline code / pre */
+.shell main code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg-raise);
+  color: var(--ink);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  border: 1px solid var(--rule);
+}
+.shell main pre {
+  background: var(--bg-raise);
+  border: 1px solid var(--rule);
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 2px;
+  line-height: 1.5;
+}
+.shell main pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* Tables */
+.shell main table {
+  border-collapse: collapse;
+  margin: 24px 0;
+  width: 100%;
+  font-size: 15px;
+}
+.shell main th, .shell main td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.shell main th {
+  font-family: var(--sans-ui);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  border-bottom-color: var(--rule-strong);
+}
+
+/* KaTeX (math) */
+.shell main .katex { font-size: 1em !important; }
+.shell main .katex-display { margin: 24px 0; }
+
+/* --- Footer ---------------------------------------------- */
+footer.ed-footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--rule);
+  padding: 28px 56px;
+  font-family: var(--sans-ui);
+  font-size: 12px;
+  color: var(--ink-faint);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+footer.ed-footer a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: color 0.15s, border-color 0.15s;
+}
+footer.ed-footer a:hover { color: var(--ink); border-bottom-color: var(--rule-strong); }
+footer.ed-footer .left, footer.ed-footer .right { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+footer.ed-footer .social {
+  display: inline-flex; gap: 14px; align-items: center;
+}
+footer.ed-footer .social a {
+  border: none; display: inline-flex; opacity: 0.7;
+  transition: opacity 0.15s;
+}
+footer.ed-footer .social a:hover { opacity: 1; border: none; }
+footer.ed-footer .social img {
+  width: 18px; height: 18px;
+  filter: invert(0.85);
+}
+
+/* --- Dark theme image utilities (kept from old) --------- */
+.dark-invert{ filter: invert(1); mix-blend-mode: screen; }
+.dark-invert-hue { filter: invert(1) hue-rotate(180deg); mix-blend-mode: screen; }
+
+/* --- Responsive ------------------------------------------ */
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 1fr;
+    padding: 64px 40px 96px;
+    max-width: 720px;
+  }
+  .left-meta {
+    position: static;
+    display: flex; flex-wrap: wrap; gap: 32px 48px;
+    margin-bottom: 16px;
+  }
+  .left-meta .meta-block { margin-bottom: 0; }
+  .ed-nav { padding: 18px 40px; }
+}
+
+@media (max-width: 760px) {
+  .ed-hero { grid-template-columns: 1fr; }
+  .ed-hero .hero-image {
+    min-height: 240px;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ed-hero .hero-text { padding: 48px 28px; }
+  .ed-nav { padding: 14px 24px; flex-wrap: wrap; gap: 12px; }
+  .ed-nav ul { gap: 18px; flex-wrap: wrap; }
+  .shell { padding: 48px 24px 80px; }
+  footer.ed-footer { flex-direction: column; padding: 24px; }
+}

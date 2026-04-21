@@ -14,3 +14,10 @@ function lx_baz(com, _)
   # do whatever you want here
   return uppercase(brace_content)
 end
+
+using Dates
+
+function hfun_fd_mtime_iso(_=String[])
+  d = locvar("fd_mtime_raw")
+  return d === nothing ? "" : Dates.format(d, "yyyy.mm.dd")
+end

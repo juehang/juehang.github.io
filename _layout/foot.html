@@ -1,11 +1,34 @@
 <!-- CONTENT ENDS HERE -->
-        </div> <!-- end of id=main -->
-    </div> <!-- end of id=layout -->
-    {{ if hasmath }}
-        {{ insert foot_katex.html }}
-    {{ end }}
-    {{ if hascode }}
-        {{ insert foot_highlight.html }}
-    {{ end }}
-  </body>
+{{ispage index.html}}
+    </div><!-- /.prose -->
+  </main>
+</div><!-- /.shell -->
+{{end}}
+
+{{isnotpage index.html}}
+  </main>
+</div><!-- /.shell -->
+{{end}}
+
+<footer class="ed-footer">
+  <div class="left">
+    <span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · {{ fill author }}</span>
+    {{isnotpage /tag/*}}<span>Last modified {{ fill fd_mtime }}</span>{{end}}
+  </div>
+  <div class="right">
+    <span class="social">
+      <a href="https://orcid.org/0000-0001-8228-8949" aria-label="ORCID"><img src="/assets/orcid.svg" alt="ORCID"></a>
+      <a href="https://fediscience.org/@qinjuehang" rel="me" aria-label="Mastodon"><img src="/assets/mastodon.svg" alt="Mastodon"></a>
+      <a href="https://github.com/juehang/" rel="me" aria-label="GitHub"><img src="/assets/github.svg" alt="GitHub"></a>
+    </span>
+    <span>Built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> · <a href="https://julialang.org">Julia</a></span>
+  </div>
+</footer>
+{{ if hasmath }}
+  {{ insert foot_katex.html }}
+{{ end }}
+{{ if hascode }}
+  {{ insert foot_highlight.html }}
+{{ end }}
+</body>
 </html>
