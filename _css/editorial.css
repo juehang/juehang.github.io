@@ -137,7 +137,7 @@ body {
 
 /* --- Franklin content wrapper (transparent) ------------- */
 /* Override default Franklin layout so per-section wrappers can size themselves */
-.franklin-content { position: relative; z-index: 1; }
+.franklin-content { position: relative; }
 
 /* --- Split hero ------------------------------------------ */
 .ed-hero {
@@ -250,7 +250,7 @@ body {
 
 /* --- Body shell: left meta + prose ----------------------- */
 .shell {
-  position: relative; z-index: 1;
+  position: relative;
   max-width: 1080px; margin: 0 auto;
   padding: 80px 56px 120px;
   display: grid; grid-template-columns: 180px 1fr;
