@@ -72,7 +72,9 @@ In other words, if there is nothing to increase the prior probability (for examp
 ## Statistical modelling and probability functions
 
 In physics, we often are not just dealing with discrete scenarios as above. Let us try out a classical particle physics scenario: a spectral fit with signal and background:
+@@dark-invert-hue
 ![Spectrum with signal and background](fe15ed1802a2ad4c12d05303a18ce26e.png)
+@@
 
 In this scenario, we expect $\mu_\mathrm{bg}\left(\vec{\theta}\right)$ background events, distributed in energy as $p_{\mathrm{bg}}\left(E|\vec{\theta}\right)$. Similarly, we expect $\mu_\mathrm{sig}\left(\vec{\theta}\right)$ signal events, distributed in energy as $p_{\mathrm{sig}}\left(E|\vec{\theta}\right)$. $\vec{\theta}$ denotes the parameters of this model, such as the signal strength, detector parameters, background rate, etc. Now, suppose we observe $N_\mathrm{obs}$ data points with energies $\vec{X} = \{E_i\}$.
 
